@@ -107,7 +107,115 @@ The analysis of goals scored and conceded by teams in the Premier League for the
 The correlation matrix reveals that goalkeeping-related features are positively correlated with each other, while other position-specific features, such as shooting and passing, also show strong correlations within their respective categories. This pattern is visually evident in the matrix, where similar features tend to group together, indicating that certain attributes are inherently linked to specific positions and roles on the field. This insight helps in understanding the relationships between different player metrics and can guide feature selection for predictive modeling.
 
 
+## 5. Predictive Analytics Performance Results
 
+### Introduction
+In this section, we evaluate the performance of our predictive models across different player positions: Goalkeepers, Defenders, Midfielders, and Forwards. Each position requires a tailored approach to account for its unique attributes and contributions to the game. Therefore, instead of a single model, we built separate models for each position. 
+
+We chose **Multiple Linear Regression (MLR)**, **Random Forest (RF)**, and **Extreme Gradient Boosting (XGB)** due to the following reasons:
+- **MLR**: A straightforward model to establish baseline performance and interpret relationships between features and market value.
+- **RF**: A powerful ensemble learning method to handle non-linear relationships and capture feature interactions effectively.
+- **XGB**: Known for its efficiency and performance, XGB can handle large datasets and complex feature dependencies while avoiding overfitting.
+
+Separate models for each position were essential to account for the distinct statistical profiles of goalkeepers, defenders, midfielders, and forwards. This specialization allows each model to focus on the features most relevant to its respective role, thereby improving prediction accuracy.
+
+---
+
+### Multiple Linear Regression (MLR) Results
+The results for MLR highlight its performance across different positions. While the model performs well for most positions, certain challenges are evident, especially in predicting market values for forwards, where variability in features like goal contributions creates additional complexity.
+
+### Visualizing Results: Actual vs. Predicted Market Values
+For each position, the scatter plot visualizes the predicted market values against the actual values, highlighting the regression line to observe model fit.
+
+#### Goalkeepers
+- **Mean Squared Error (MSE):** 17.17  
+- **Root Mean Squared Error (RMSE):** 4.14  
+- **R² Score:** 0.89  
+![image](https://github.com/user-attachments/assets/de2688e2-2ff7-4aa2-b486-d1b6dec69961)
+
+
+#### Defenders
+- **Mean Squared Error (MSE):** 38.22  
+- **Root Mean Squared Error (RMSE):** 6.18  
+- **R² Score:** 0.82  
+![image](https://github.com/user-attachments/assets/19829e80-4221-4cf6-9065-b2880fa918c0)
+
+
+#### Midfielders
+- **Mean Squared Error (MSE):** 45.74  
+- **Root Mean Squared Error (RMSE):** 6.76  
+- **R² Score:** 0.89  
+![image](https://github.com/user-attachments/assets/9ed03e6e-ef9b-43f0-9ec6-c105d7396294)
+
+
+#### Forwards
+- **Mean Squared Error (MSE):** 111.43  
+- **Root Mean Squared Error (RMSE):** 10.56  
+- **R² Score:** 0.83  
+![image](https://github.com/user-attachments/assets/e40a6321-ebda-4fe1-9603-a5afec444ec8)
+
+
+### Model Evaluation: Overall Performance of MLR
+
+To assess the overall effectiveness of the MLR model, we computed the average performance metrics across all positions:
+
+- **Overall Mean Squared Error (MSE):** 53.39  
+- **Overall Root Mean Squared Error (RMSE):** 6.91  
+- **Overall R² Score:** 0.86  
+
+These results indicate that the MLR model provides a solid baseline, achieving good predictive accuracy across all positions. Its high R² score (0.86) reflects strong alignment between predicted and actual market values. However, the model demonstrates variability in performance, with higher error rates for forwards compared to other positions. This suggests that while MLR effectively models simpler relationships, it may not fully capture the complexity of market valuation for attacking players.
+
+By benchmarking these metrics against other models (RF and XGB), we can determine the best-fit model for this dataset in the final conclusion.
+
+
+## Random Forest (RF) Results
+The Random Forest model was selected for its ability to handle non-linear relationships and capture feature interactions effectively. With its ensemble learning approach, RF combines multiple decision trees to reduce overfitting and improve predictive accuracy. This model demonstrates robust performance across all positions, offering a balance between interpretability and accuracy.
+
+### Visualizing Results: Actual vs. Predicted Market Values
+For each position, the scatter plot visualizes the predicted market values against the actual values, highlighting the regression line to observe model fit.
+
+#### Goalkeepers
+- **Mean Squared Error (MSE):** 7.30  
+- **Root Mean Squared Error (RMSE):** 2.70  
+- **R² Score:** 0.92  
+
+![image](https://github.com/user-attachments/assets/fe198a9f-be4e-42d9-ae83-0190369266ea)
+
+
+#### Defenders
+- **Mean Squared Error (MSE):** 34.26  
+- **Root Mean Squared Error (RMSE):** 5.85  
+- **R² Score:** 0.85  
+
+![image](https://github.com/user-attachments/assets/1bdcbbb3-5004-4a93-a01e-1f551f51aaa8)
+
+
+#### Midfielders
+- **Mean Squared Error (MSE):** 49.50  
+- **Root Mean Squared Error (RMSE):** 7.04  
+- **R² Score:** 0.84  
+
+![image](https://github.com/user-attachments/assets/f1df6189-2467-476e-943a-f7da9985f08a)
+
+
+#### Forwards
+- **Mean Squared Error (MSE):** 60.68  
+- **Root Mean Squared Error (RMSE):** 7.79  
+- **R² Score:** 0.91  
+
+![image](https://github.com/user-attachments/assets/3e58b1c3-ef9b-4edb-9498-4fe83bda368d)
+
+
+### Model Evaluation: Overall Performance of RF
+To assess the overall effectiveness of the RF model, we computed the average performance metrics across all positions:
+
+- **Overall Mean Squared Error (MSE):** 37.94  
+- **Overall Root Mean Squared Error (RMSE):** 5.85  
+- **Overall R² Score:** 0.88  
+
+These results highlight the Random Forest model's ability to generalize well across all player positions. Its lower error rates (MSE and RMSE) and higher R² scores, particularly for goalkeepers and forwards, indicate strong predictive accuracy and robust handling of non-linear feature interactions. The RF model consistently outperforms MLR in capturing complex patterns, making it a strong contender for the best-fit model. 
+
+Further comparisons with the XGB model will determine its relative standing as the optimal predictive model.
 
 
 
