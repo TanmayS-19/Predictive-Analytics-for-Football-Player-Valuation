@@ -276,7 +276,26 @@ To assess the overall effectiveness of the XGBoost model, we computed the averag
 
 These results underscore XGBoost's superior performance, achieving the lowest overall error rates (MSE and RMSE) and the highest R² scores among all models tested. Its ability to generalize well across diverse positions and identify critical features makes XGBoost a top candidate for the best-fit model. 
 
-Final conclusions will be drawn by comparing XGBoost with the RF and MLR models in the conclusion section.
+
+### Implementation of XGBoost on New Data:
+
+We implemented a pipeline to process newly added data by:
+
+1. **Identifying the player's position**  
+   - Determines the player's position (e.g., GK, DF, MF, FW) based on input data.
+
+2. **Selecting the appropriate position-specific XGBoost model and feature set**  
+   - Uses pre-trained XGBoost models tailored for each position with relevant feature sets.
+
+3. **Scaling the player's feature values**  
+   - Applies the corresponding pre-trained scaler to normalize the feature values.
+
+4. **Predicting the player's market value**  
+   - Outputs the predicted value alongside the actual value for evaluation.
+
+This approach ensures that the model remains relevant for updated datasets and real-time player evaluations. Below is a sample output demonstrating this functionality:
+
+![image](https://github.com/user-attachments/assets/9e287282-9166-4ca4-8679-6115ecdbf3b8)
 
 
 ## 6. Conclusion
