@@ -110,12 +110,14 @@ The correlation matrix reveals that goalkeeping-related features are positively 
 ## 5. Predictive Analytics Performance Results
 
 ### Introduction
-In this section, we evaluate the performance of our predictive models across different player positions: Goalkeepers, Defenders, Midfielders, and Forwards. Each position requires a tailored approach to account for its unique attributes and contributions to the game. Therefore, instead of a single model, we built separate models for each position. 
+In this section, we evaluate the performance of our predictive models across different player positions: Goalkeepers, Defenders, Midfielders, and Forwards. Each position requires a tailored approach to account for its unique attributes and contributions to the game. Therefore, instead of a single model, we built separate models for each position.
 
 We chose **Multiple Linear Regression (MLR)**, **Random Forest (RF)**, and **Extreme Gradient Boosting (XGB)** due to the following reasons:
 - **MLR**: A straightforward model to establish baseline performance and interpret relationships between features and market value.
 - **RF**: A powerful ensemble learning method to handle non-linear relationships and capture feature interactions effectively.
 - **XGB**: Known for its efficiency and performance, XGB can handle large datasets and complex feature dependencies while avoiding overfitting.
+
+To optimize performance, we implemented **automated hyperparameter tuning** using iterative looping techniques. This approach allowed us to identify the most optimized parameters for each model and maximize their predictive accuracy.
 
 Separate models for each position were essential to account for the distinct statistical profiles of goalkeepers, defenders, midfielders, and forwards. This specialization allows each model to focus on the features most relevant to its respective role, thereby improving prediction accuracy.
 
@@ -216,6 +218,80 @@ To assess the overall effectiveness of the RF model, we computed the average per
 These results highlight the Random Forest model's ability to generalize well across all player positions. Its lower error rates (MSE and RMSE) and higher R² scores, particularly for goalkeepers and forwards, indicate strong predictive accuracy and robust handling of non-linear feature interactions. The RF model consistently outperforms MLR in capturing complex patterns, making it a strong contender for the best-fit model. 
 
 Further comparisons with the XGB model will determine its relative standing as the optimal predictive model.
+
+
+## XGBoost (XGB) Results
+The XGBoost model was chosen for its high performance, efficiency, and ability to handle complex feature interactions while minimizing overfitting. By leveraging gradient boosting, XGB provides superior accuracy and scalability, making it an excellent fit for predictive analytics in this project.
+
+### Visualizing Results: Actual vs. Predicted Market Values
+For each position, the scatter plot visualizes the predicted market values against the actual values, highlighting the regression line to observe model fit.
+
+### Feature Importance Visualization
+In addition to the Actual vs. Predicted Market Values result visualization, we analyzed the top features contributing to market value predictions using XGBoost's feature importance metric. The bar charts mentioned along with the Actual vs. Predicted Market Values result visualization highlights the top 10 features for the each position using XGB model.
+This visualization provides insights into the most influential variables, helping us understand the model's decision-making process.
+
+
+#### Goalkeepers
+- **Mean Squared Error (MSE):** 3.16  
+- **Root Mean Squared Error (RMSE):** 1.78  
+- **R² Score:** 0.96  
+
+![image](https://github.com/user-attachments/assets/33b74e70-34a6-4c84-a8ec-cfc9c7564060)
+![image](https://github.com/user-attachments/assets/d543779d-951c-4342-bb60-5bd4e0dec65e)
+
+
+#### Defenders
+- **Mean Squared Error (MSE):** 27.01  
+- **Root Mean Squared Error (RMSE):** 5.20  
+- **R² Score:** 0.88  
+
+![image](https://github.com/user-attachments/assets/e8879deb-118b-4072-bb37-52185b91440d)
+![image](https://github.com/user-attachments/assets/c5a41645-223c-4f3c-a5ef-f27ce3c8b655)
+
+
+#### Midfielders
+- **Mean Squared Error (MSE):** 54.50  
+- **Root Mean Squared Error (RMSE):** 7.38  
+- **R² Score:** 0.87  
+
+![image](https://github.com/user-attachments/assets/98a3f16c-ffca-4cca-88cd-161334f0ab3d)
+![image](https://github.com/user-attachments/assets/db8991d2-9dac-47ad-81b9-3c4f8aad7863)
+
+
+#### Forwards
+- **Mean Squared Error (MSE):** 47.49  
+- **Root Mean Squared Error (RMSE):** 6.89  
+- **R² Score:** 0.89  
+
+![image](https://github.com/user-attachments/assets/9aebcf1a-cdcb-4d90-a507-f043a23d5088)
+![image](https://github.com/user-attachments/assets/9a46dafd-3630-4af8-8d13-65dce9811d39)
+
+
+### Model Evaluation: Overall Performance of XGB
+To assess the overall effectiveness of the XGBoost model, we computed the average performance metrics across all positions:
+
+- **Overall Mean Squared Error (MSE):** 33.04  
+- **Overall Root Mean Squared Error (RMSE):** 5.31  
+- **Overall R² Score:** 0.90  
+
+These results underscore XGBoost's superior performance, achieving the lowest overall error rates (MSE and RMSE) and the highest R² scores among all models tested. Its ability to generalize well across diverse positions and identify critical features makes XGBoost a top candidate for the best-fit model. 
+
+Final conclusions will be drawn by comparing XGBoost with the RF and MLR models in the conclusion section.
+
+
+## 6. Conclusion
+Our approach to building separate predictive models for each player position stems from the unique characteristics and statistical profiles of Goalkeepers, Defenders, Midfielders, and Forwards. By tailoring the models to each position, we ensured that position-specific attributes were appropriately weighted, leading to better performance compared to a one-size-fits-all approach.
+
+After evaluating the results, XGBoost emerged as the best-fit model for our dataset, achieving the lowest overall error rates (Mean Squared Error and Root Mean Squared Error) and the highest R² scores across all positions.
+
+XGBoost demonstrated consistent and superior performance across Goalkeepers, Defenders, Midfielders, and Forwards. Its overall metrics—MSE: 33.04, RMSE: 5.31, R²: 0.90—were better than both RF and MLR. The model's ability to provide clear interpretability through feature importance analysis helped identify the most critical factors influencing market value predictions. Its ability to model complex, non-linear relationships between features and target variables makes it particularly effective for diverse datasets like ours.
+
+By leveraging gradient boosting techniques, XGBoost captures intricate patterns in the data without overfitting. The automated hyperparameter tuning process further improved its accuracy, ensuring it was well-calibrated for each position. Additionally, XGBoost’s scalability makes it highly efficient for large datasets, ensuring it is suitable for more extensive and complex football data.
+
+This model has significant real-world applications. Clubs can use it to estimate player market values, aiding in transfer decisions and budget planning. Scouts can identify undervalued players to optimize recruitment strategies. Agents and players can utilize the model's insights to justify contracts or transfers. Investors or sponsors can assess a player’s monetary potential based on their performance metrics, promoting data-driven decision-making. Furthermore, football federations can use this model to monitor and regulate market value trends, promoting fair play and equity.
+
+This project bridges the gap between advanced data science techniques and football analytics, offering a reliable and interpretable tool for player valuation. It adds value by promoting transparency in market value estimations, supporting informed decision-making for stakeholders, and emphasizing the importance of position-specific analytics to enhance talent management. By focusing on both accuracy and interpretability, our models align with real-world requirements, demonstrating the power of data-driven insights in modern football.
+
 
 
 
