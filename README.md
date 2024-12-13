@@ -181,7 +181,7 @@ For each position, the scatter plot visualizes the predicted market values again
 - **Root Mean Squared Error (RMSE):** 2.70  
 - **R² Score:** 0.92  
 
-![image](https://github.com/user-attachments/assets/fe198a9f-be4e-42d9-ae83-0190369266ea)
+![image](https://github.com/user-attachments/assets/fdab6b1f-00e8-4552-aa60-f4db3c701810)
 
 
 #### Defenders
@@ -236,7 +236,7 @@ This visualization provides insights into the most influential variables, helpin
 - **Root Mean Squared Error (RMSE):** 1.78  
 - **R² Score:** 0.96  
 
-![image](https://github.com/user-attachments/assets/33b74e70-34a6-4c84-a8ec-cfc9c7564060)
+![image](https://github.com/user-attachments/assets/8ee4a841-12ff-4653-84d9-86ed723c850b)
 ![image](https://github.com/user-attachments/assets/d543779d-951c-4342-bb60-5bd4e0dec65e)
 
 
@@ -245,7 +245,7 @@ This visualization provides insights into the most influential variables, helpin
 - **Root Mean Squared Error (RMSE):** 5.20  
 - **R² Score:** 0.88  
 
-![image](https://github.com/user-attachments/assets/e8879deb-118b-4072-bb37-52185b91440d)
+![image](https://github.com/user-attachments/assets/efcfb3ec-2842-45a4-95d8-ff35acd52736)
 ![image](https://github.com/user-attachments/assets/c5a41645-223c-4f3c-a5ef-f27ce3c8b655)
 
 
@@ -254,7 +254,7 @@ This visualization provides insights into the most influential variables, helpin
 - **Root Mean Squared Error (RMSE):** 7.38  
 - **R² Score:** 0.87  
 
-![image](https://github.com/user-attachments/assets/98a3f16c-ffca-4cca-88cd-161334f0ab3d)
+![image](https://github.com/user-attachments/assets/5df2d87b-8364-4127-aac5-e0886d3f4c00)
 ![image](https://github.com/user-attachments/assets/db8991d2-9dac-47ad-81b9-3c4f8aad7863)
 
 
@@ -263,7 +263,7 @@ This visualization provides insights into the most influential variables, helpin
 - **Root Mean Squared Error (RMSE):** 6.89  
 - **R² Score:** 0.89  
 
-![image](https://github.com/user-attachments/assets/9aebcf1a-cdcb-4d90-a507-f043a23d5088)
+![image](https://github.com/user-attachments/assets/321deda0-31d6-4cec-8822-107b87c0e7e1)
 ![image](https://github.com/user-attachments/assets/9a46dafd-3630-4af8-8d13-65dce9811d39)
 
 
